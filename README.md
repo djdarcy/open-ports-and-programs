@@ -11,7 +11,7 @@
    - Sort by **PID**, **Port**, or **Program** name for easy navigation of large connection lists.
 
 3. **Regex Filtering**  
-   - Include or exclude connections by process name or ports using regex (e.g., `-r "(chrome|msedge|opera)"`).
+   - Include or exclude connections by process name or ports using regex (e.g., `-r "(chrome|firefox|opera)"`).
 
 4. **Continuous Monitoring**  
    - With `-c/--continuous [INTERVAL]`, repeatedly update the list of open ports for real-time tracking.
@@ -80,8 +80,8 @@ python open-ports-and-programs.py -p --continuous 5
 ### 5. Filter by Regex
 
 ```
-# Only show connections for Chrome, Edge, or Opera; sort by PID
-python open-ports-and-programs.py --pid --regex "(chrome|msedge|opera)"
+# Only show connections for Chrome, Firefox, or Opera; sort by PID
+python open-ports-and-programs.py --pid --regex "(chrome|firefox|opera)"
 ```
 
 ### 6. Resolve DNS
@@ -92,34 +92,19 @@ python open-ports-and-programs.py --dns
 
 Converts remote IPs to hostnames.
 
-## Command-Line Options
+## Command-Line Options / Reference
 
-```
-usage: open-ports-and-programs.py [-h] [-i] [-p] [-s {PID,Port,Program}]
-                                  [-b] [-l] [-d] [-r REGEX]
-                                  [-c [CONTINUOUS]]
-
-List open ports and corresponding programs. Optionally, filter by program name,
-port, or connection count.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -i, --pid             Sort by PID
-  -p, --port            Sort by Port
-  -s {PID,Port,Program}, --sort {PID,Port,Program}
-                        Sort by PID, Port, or Program (default: Program)
-  -b, --bare            Bare output, suitable for scripts
-  -l, --listening       Show only listening connections
-  -d, --dns             Resolve IP addresses to domain names
-  -r REGEX, --regex REGEX
-                        Regex pattern to filter output
-  -c [CONTINUOUS], --continuous [CONTINUOUS]
-                        Continuously monitor network connections at specified
-                        interval in seconds (default: 10s)
-
-open-ports-and-programs.py v1.0 (https://github.com/djdarcy/open-ports-and-programs)
-Dustin Darcy @ <ScarcityHypothesis.org>
-```
+| Argument                  | Description                                                                 |
+| ------------------------- | --------------------------------------------------------------------------- |
+| `-i, --pid`              | Sort output by PID (Process ID).                                            |
+| `-p, --port`             | Sort output by Port.                                                        |
+| `-s {PID,Port,Program}, --sort {PID,Port,Program}` | Sort by PID, Port, or Program (default: Program).                           |
+| `-b, --bare`             | Bare output format, suitable for use in scripts.                            |
+| `-l, --listening`        | Show only connections in the `LISTEN` state.                                |
+| `-d, --dns`              | Resolve remote IP addresses to domain names for better readability.         |
+| `-r REGEX, --regex REGEX`| Filter connections using a regex pattern applied to process names or ports. |
+| `-c [CONTINUOUS], --continuous [CONTINUOUS]` | Continuously monitor network connections at the specified interval in seconds (default: 10s). |
+| `-h, --help`             | Show the help message and exit.                                             |
 
 ## Known Limitations
 
@@ -137,6 +122,11 @@ Contributions are welcome. Feel free to:
 1. Fork the repository.
 2. Make changes on a new branch (e.g., `feature/add-protocol-filter`).
 3. Submit a pull request with a clear description of your modifications.
+
+Like the project?
+
+[!["Buy Me A Coffee"](https://camo.githubusercontent.com/0b448aabee402aaf7b3b256ae471e7dc66bcf174fad7d6bb52b27138b2364e47/68747470733a2f2f7777772e6275796d6561636f666665652e636f6d2f6173736574732f696d672f637573746f6d5f696d616765732f6f72616e67655f696d672e706e67)](https://www.buymeacoffee.com/djdarcy)
+
 
 ## License
 
