@@ -96,9 +96,9 @@ Converts remote IPs to hostnames.
 
 | Argument                  | Description                                                                 |
 | ------------------------- | --------------------------------------------------------------------------- |
-| `-i, --pid`              | Sort output by PID (Process ID).                                            |
-| `-p, --port`             | Sort output by Port.                                                        |
-| `-s {PID,Port,Program}, --sort {PID,Port,Program}` | Sort by PID, Port, or Program (default: Program).                           |
+| `-s {PID,Port,Program}, --sort {PID,Port,Program}` | Full: Sort by PID, Port, or Program (default: Program).                           |
+| `-i, --pid`              | Quick: Sort output by PID (Process ID).                                            |
+| `-p, --port`             | Quick: Sort output by Port.                                                        |
 | `-b, --bare`             | Bare output format, suitable for use in scripts.                            |
 | `-l, --listening`        | Show only connections in the `LISTEN` state.                                |
 | `-d, --dns`              | Resolve remote IP addresses to domain names for better readability.         |
